@@ -5,7 +5,7 @@ import { getContacts, getFilter } from 'redux/selectors';
 
 export default function PhonebookList() {
     const stateFilter = useSelector(getFilter).filter;
-    const contactsList = useSelector(getContacts);
+    const contactsList = useSelector(getContacts).contacts;
     const dispatch = useDispatch()
 
     const getFilteredPeople = () => {
@@ -25,8 +25,7 @@ export default function PhonebookList() {
   };
     
     const people = getFilteredPeople();
-    (console.log(people))
-
+    
     const list = people.map(({ id, name, number }) => {
         return <ListItem key={id}>
             <Row>Name: {name}</Row>
