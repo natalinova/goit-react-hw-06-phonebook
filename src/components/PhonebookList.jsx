@@ -10,22 +10,20 @@ export default function PhonebookList() {
 
     const getFilteredPeople = () => {
     if (!stateFilter) {
-      return contactsList
-    };
-    const normalizedFilter = stateFilter.toLocaleLowerCase();
-    const filteredPeople = contactsList.filter(({ name, number }) => {
-      const normalizedName = name.toLocaleLowerCase();
-      const normalizedNumber = number.toLocaleLowerCase();
-      
-      const result = normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter);
-      return result;
-        
-    })
+            return contactsList
+        };
+        const normalizedFilter = stateFilter.toLocaleLowerCase();
+        const filteredPeople = contactsList.filter(({ name, number }) => {
+            const normalizedName = name.toLocaleLowerCase();
+            const normalizedNumber = number.toLocaleLowerCase();
+            const result = normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter);
+            return result;
+        })
     return filteredPeople;
   };
     
     const people = getFilteredPeople();
-    
+
     const list = people.map(({ id, name, number }) => {
         return <ListItem key={id}>
             <Row>Name: {name}</Row>

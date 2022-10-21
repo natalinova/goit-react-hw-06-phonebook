@@ -8,11 +8,12 @@ export default function PhonebookFilter() {
         e.preventDefault();
         dispatch(setFilter(e.target.value))
         console.log(e.target.value)
-    
     }
-    return (<InputField
+    return (
+        <InputField
           type='text'
           name='filter'
           onChange={handleInput}
-          placeholder={"filter"}/>)
+        placeholder={"filter"} />
+    )
 }
