@@ -4,8 +4,8 @@ import { ListItem, Button, Row } from './PhonebookStyled'
 import { getContacts, getFilter } from 'redux/selectors';
 
 export default function PhonebookList() {
-    const stateFilter = useSelector(getFilter).filter;
-    const contactsList = useSelector(getContacts).contacts;
+    const stateFilter = useSelector(getFilter);
+    const contactsList = useSelector(getContacts);
     const dispatch = useDispatch()
 
     const getFilteredPeople = () => {

@@ -7,7 +7,7 @@ import { getContacts } from "redux/selectors";
 
 export default function PhonebookForm() {
     const dispatch = useDispatch();
-    const contactList = useSelector(getContacts).contacts;
+    const contactList = useSelector(getContacts);
     const [name, setName] = useState('')
     const [number, setNumber] = useState('')
     
